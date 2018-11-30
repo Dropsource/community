@@ -2,7 +2,9 @@
 
 Welcome to the Dropsource community! :wave:
 
-<em>(welcome text to follow)</em>
+<em>This is a test repo.</em>
+
+(welcome text to follow)
 
 ## Member Stories
 
