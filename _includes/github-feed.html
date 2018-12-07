@@ -1,0 +1,85 @@
+<div id="gh-feed"></div>
+<script type="text/javascript">
+fetch('https://api.github.com/orgs/dropsource/events', {headers:{
+    'Content-Type': 'application/json'
+  }})
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(ghJson) {
+    console.log(JSON.stringify(ghJson));
+    var ghOutput='<table><tbody style="width:70%; display:table;"><tr style="background-image: linear-gradient(#ffffff, #f0f0f0);"><td style="text-align:center; width:70px; height:70px; padding:10px;"><img src="https://avatars1.githubusercontent.com/u/14957781" width="50px"/></td><td style="font-size:large; vertical-align:center;"><div style="width:80%; float:left;"><p><strong><a style="color:black;" href="https://github.com/dropsource">Dropsource on GitHub</a></strong></p></div><div style="width:20%; float:left; text-align:right; padding:15px;"><img src="assets/svg/mark-github.svg" style="width:40px"/></div></td></tr>';
+    var i;
+    for(i=0; i<ghJson.length && i<10; i++){ //restrict length or scroll
+    	var actor = ghJson[i].actor.url.substring(ghJson[i].actor.url.lastIndexOf('/')+1);
+		var ghInfo=getOcti(ghJson[i].type, ghJson[i].payload.ref_type);
+    	ghOutput+='<tr><td style="text-align:center; width:60px; height:60px; padding:15px;"><a href="https://github.com'+ghJson[i].actor.url.substring(ghJson[i].actor.url.lastIndexOf('/'))+'"><img src="'+ghJson[i].actor.avatar_url+'" width="40px" style="border-radius:20px;"/><a/></td><td><p><img src="assets/svg/'+ghInfo.img+'.svg" style="height:1.5em; margin-bottom:-0.5em;"/> '+new Date(ghJson[i].created_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })+' <strong><a href="https://github.com/'+actor+'" style="color:black;">@'+actor+'<a/></strong>'+ghInfo.message+'</p><p><strong><a href="https://github.com/'+ghJson[i].repo.name+'">'+ghJson[i].repo.name+'</a></strong>';
+    	ghOutput+='</p></td></tr>';
+    }
+    ghOutput+='</tbody></table>';
+    $('#gh-feed').append(ghOutput);
+  });
+  
+  function getOcti(eventType, refType){
+  	var eventDetail={};
+  	switch(eventType){
+  		case 'ForkEvent': 
+  			eventDetail.img='repo-forked'; 
+  			eventDetail.message=' forked '; 
+  			break;
+  		case 'ReleaseEvent': 
+  			eventDetail.img='tag'; 
+  			eventDetail.message=' released '; 
+  			break;
+  		case 'PushEvent': 
+  			eventDetail.img='repo-push'; 
+  			eventDetail.message=' pushed to '; 
+  			break;
+  		case 'WatchEvent': 
+  			eventDetail.img='eye'; 
+  			eventDetail.message=' watched '; 
+  			break;
+  		case 'IssueCommentEvent': 
+  			eventDetail.img='comment'; 
+  			eventDetail.message=' commented on '; 
+  			break;
+  		case 'CommitCommentEvent': 
+  			eventDetail.img='comment'; 
+  			eventDetail.message=' commented on '; 
+  			break;
+  		case 'IssuesEvent': 
+  			eventDetail.img='issue-opened'; 
+  			eventDetail.message=' created an issue on '; 
+  			break;
+  		case 'PullRequestEvent': 
+  			eventDetail.img='git-pull-request'; 
+  			eventDetail.message=' opened a pull request on '; 
+  			break;
+  		case 'GollumEvent': 
+  			eventDetail.img='repo'; 
+  			eventDetail.message=' edited the wiki on '; 
+  			break;
+  		case 'CreateEvent': switch(refType){
+  				case 'repository': 
+  					eventDetail.img='repo'; 
+  					eventDetail.message=' created repository '; 
+  					break;
+  				case 'branch': 
+  					eventDetail.img='git-branch'; 
+  					eventDetail.message=' created a branch on '; 
+  					break;
+  				case 'tag': 
+  					eventDetail.img='tag'; 
+  					eventDetail.message=' created a tag on '; 
+  					break;
+  			}
+  			break;
+  		default: 
+  			eventDetail.img='octoface'; 
+  			eventDetail.message=''; 
+  			break;
+  	}
+  	console.log(eventType +' '+ refType +' '+ eventDetail.img +' '+ eventDetail.message);
+  	return eventDetail;
+  }
+</script>

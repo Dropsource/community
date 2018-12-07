@@ -2,3 +2,4 @@ theme: jekyll-theme-cayman
 title: Dropsource Community Hub
 plugins: 
     - jemoji
+    - jekyll-octicons
