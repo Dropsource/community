@@ -38,6 +38,25 @@ $(function () {
 		}
 	});
 });
+
+//testing 
+fetch('https://forum.dropsource.com/posts.json', {headers:{
+    'Content-Type': 'application/json'
+  }})
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(forumJson) {
+    console.log(JSON.stringify(forumJson));
+/*    var forumOutput='<table><tr><th>Dropsource on GitHub</th></tr>';
+    var i;
+    for(i=0; i<forumJson.length && i<10; i++){
+    	forumOutput+='<tr><td>';
+    	forumOutput+='</td></tr>';
+    }
+    forumOutput+='</table>';
+    $('#gh-feed').append(forumOutput);*/
+  });
 </script>
 
 </tr></table>
