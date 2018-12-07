@@ -15,7 +15,7 @@ fetch('https://api.github.com/repos/dropsource/serverless-todo-api-example-compl
 });
 function projectContent(project){
 	var output='<td style="display:inline-block; float:left; width:33%; height:300px; padding:10px;">';
-	output+='<img src="/assets/svg/repo.svg" width="20px"/>';
+	output+='<img src="assets/svg/repo.svg" width="20px"/>';
 	output+='<p style="word-wrap:break-all"><strong><a href="'+project.html_url+'">'+project.name+'</a></strong></p>';
 	output+='<p>'+project.description+'</p>';
 	output+='<p style="font-size:small"><img src="assets/svg/eye.svg" width="10px" height="10px"/> '+project.watchers_count+' &nbsp; <img src="assets/svg/repo-forked.svg" width="10px" height="10px"/> '+project.forks_count+' &nbsp; <img src="assets/svg/star.svg" width="10px" height="10px"/> '+project.stargazers_count+'</p>';
