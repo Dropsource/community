@@ -40,7 +40,7 @@ $(function () {
 });
 
 //testing 
-fetch('https://forum.dropsource.com/posts.json', {headers:{
+fetch('https://forum.dropsource.com/posts.json', { mode:'no-cors', headers:{
     'Content-Type': 'application/json'
   }})
   .then(function(response) {
