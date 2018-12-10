@@ -12,8 +12,9 @@ fetch('https://forumtest.dropsource.com/posts.json', {headers:{'Content-Type':'a
     console.log(JSON.stringify(forumJson)); 
     var forumOutput='';
     var i;
-    for(i=0; i<forumJson.length && i<10; i++){
+    for(i=0; i<forumJson.latest_posts.length && i<10; i++){
     	forumOutput+='<tr><td>';
+    	forumOutput+=forumJson.latest_posts[i].username;
     	forumOutput+='</td></tr>';
     }
     forumOutput+='</table>';
