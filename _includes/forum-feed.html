@@ -1,41 +1,26 @@
+
 <table id='forum-feed'>
 <tr><td colspan="2" style="font-size:medium; padding-bottom:10px;"><strong><a href="https://forum.dropsource.com">Dropsource Forum Activity</a></strong></td></tr>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 <script type="text/javascript">
-$(function () {
-
-	var $content = $('#jsonContent');
-	var data = {
-		rss_url: 'https://forum.dropsource.com/posts.rss'
-	};
-
-	$.get('https://api.rss2json.com/v1/api.json', data, function (response) {
-		if (response.status == 'ok') {
-			var output = '';
-			$.each(response.items, function (k, item) {
-				output += '<tr>';
-				var user=item.author.split(' ')[0];
-				var avatar='https://forum.dropsource.com/user_avatar/forum.dropsource.com/'+user.substring(1)+'/240/110_1.png';
-				output+='<td><img src="'+avatar+'" width="100px" style="border-radius:50px" onload="console.log(\'loaded\')" onerror="console.log(\'not loaded\')"/></td>';
-				output+='<td class="forum-post">';
-				output += '<div class="blog-content"><strong><a href="'+ item.link + '">' + item.title + '</a></strong>';
-				
-				output += '<div class="post-meta"><em>By <a href="https://forum.dropsource.com/u/'+user.substring(1)+'">' + user + '<a/></em></div>';
-				var yourString = item.description.replace(/<img[^>]*>/g,"");
-				var maxLength = 200 // maximum number of characters to extract
-				//trim the string to the maximum length
-				var trimmedString = yourString.substr(0, maxLength);
-				//re-trim if we are in the middle of a word
-				trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-				output += '<p>' + trimmedString + '...</p>';
-				output += '</div></td></tr>';
-				return k < 5;
-			});
-			$('#forum-feed').append(output);
-		}
+fetch('https://forumtest.dropsource.com/posts.json', {headers:{'Content-Type':'application/json'
+  }}).then(function(response) { 
+    return response.json();
+  }).then(function(forumJson) {
+    console.log(JSON.stringify(forumJson)); 
+    var forumOutput='';
+    var i;
+    for(i=0; i<forumJson.length && i<10; i++){
+    	forumOutput+='<tr><td>';
+    	forumOutput+='</td></tr>';
+    }
+    forumOutput+='</table>';
+    $('#forum-feed').append(forumOutput);
 	});
-});
+
+
 
 </script>
 
