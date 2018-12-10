@@ -9,6 +9,7 @@ fetch('https://forumtest.dropsource.com/posts.json', {headers:{'Content-Type':'a
   }}).then(function(response) { 
     return response.json();
   }).then(function(forumJson) {
+  	console.log('posts '+forumJson.latest_posts.length);
     console.log(JSON.stringify(forumJson)); 
     var forumOutput='';
     var i;
