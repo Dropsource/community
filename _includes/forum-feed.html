@@ -14,11 +14,11 @@ fetch('https://forum.dropsource.com/posts.json', {headers:{'Content-Type':'appli
     var forumOutput='';
     var i;
     for(i=0; i<forumJson.latest_posts.length && i<10; i++){
-    	forumOutput+='<tr><td>';
+    	forumOutput+='<tr><td style="width:100px;">';
     	var avatar=forumJson.latest_posts[i].avatar_template.replace('{size}', '240');
     	forumOutput+='<img src="https://forum.dropsource.com'+avatar+'" width="70px" style="border-radius:35px"/></td><td><p><strong><a href="https://forum.dropsource.com/'+forumJson.latest_posts[i].topic_slug+'/'+forumJson.latest_posts[i].id+'/'+forumJson.latest_posts[i].post_number+'">'+forumJson.latest_posts[i].topic_title+'</a></strong></p>';
-    	forumOutput+='<p><a href="https://forum.dropsource.com/u/'+forumJson.latest_posts[i].username+'">'+forumJson.latest_posts[i].username+'</a> said: </p>';
-    	forumOutput+='<p>'+forumJson.latest_posts[i].raw.substring(0, 200)+'...</p></td></tr>';
+    	forumOutput+='<p><a href="https://forum.dropsource.com/u/'+forumJson.latest_posts[i].username+'">@'+forumJson.latest_posts[i].username+'</a> <em>said</em>: <br/>';
+    	forumOutput+='<p>'+forumJson.latest_posts[i].raw.substring(0, 500)+'...</p></td></tr>';
     }
     forumOutput+='</table>';
     $('#forum-feed').append(forumOutput);
