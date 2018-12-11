@@ -5,7 +5,7 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
-fetch('https://forumtest.dropsource.com/posts.json', {headers:{'Content-Type':'application/json'
+fetch('https://forum.dropsource.com/posts.json', {headers:{'Content-Type':'application/json'
   }}).then(function(response) { 
     return response.json();
   }).then(function(forumJson) {
@@ -15,14 +15,14 @@ fetch('https://forumtest.dropsource.com/posts.json', {headers:{'Content-Type':'a
     var i;
     for(i=0; i<forumJson.latest_posts.length && i<10; i++){
     	forumOutput+='<tr><td>';
+    	var avatar=forumJson.latest_posts[i].avatar_template.replace('{size}', '240');
+    	forumOutput+='<td><img src="https://forum.dropsource.com'+avatar+'" width="100px" style="border-radius:50px"/></td><td>';
     	forumOutput+=forumJson.latest_posts[i].username;
-    	forumOutput+='</td></tr>';
+    	forumOutput+=' said...</td></tr>';
     }
     forumOutput+='</table>';
     $('#forum-feed').append(forumOutput);
 	});
-
-
 
 </script>
 
