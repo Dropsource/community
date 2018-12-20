@@ -14,19 +14,19 @@ This is the hub for Dropsource community activity, from our member forum to cont
 
 ## Member Stories
 
-Check out learnings, tips, and observations from Dropsource community members. __[Get in touch if you'd like to share yours!](https://forum.dropsource.com/u/sue/)__
+Check out learnings, tips, and observations from Dropsource community members. __[Get in touch if you'd like to share yours!](https://forum.dropsource.com/u/sue/)__ :mega:
 
 {% include medium-feed.html %}
 
 ## Forum
 
-Access community support, connect to other Dropsource developers, and get involved in the conversation on the __[forum](https://forum.dropsource.com)__!
+Access community support, connect to other Dropsource developers, and get involved in the conversation on the __[forum](https://forum.dropsource.com)__. :speech_balloon:
 
 {% include forum-feed.html %}
 
 ## Future
 
-Have an impact on the future of the Dropsource platform! Make a feature request or register to have your say on feature developments as they happen. Help the core Dropsource team to understand your goals and feed your input into feature prioritization.
+Have an impact on the future of the Dropsource platform! Make a feature request or register to have your say on feature developments as they happen. Help the core Dropsource team to understand your goals and feed your input into feature prioritization. :rocket:
 
 ### Sneek Peaks
 
@@ -38,7 +38,7 @@ Register for sneak peeks of upcoming features and provide feedback that will be 
 
 Feature requests for Dropsource plugins are logged in our [public facing Trello board](https://trello.com/b/BCCMRu9i). 
 
-Everything you can add to your apps in Dropsource, including Elements, Actions, and SDK integrations, is provided via plugins. The Dropsource editor exposes plugins through the Elements and Settings on the left, and the Actions you can add to Events in your app. 
+Everything you can add to your apps in Dropsource, including Elements, Actions, and SDK integrations, is provided via plugins. The Dropsource editor exposes plugins through the Elements and Settings on the left, and the Actions you can add to Events in your app. :iphone:
 
 If you'd like to use an Element, Action / piece of native functionality, or SDK in your Dropsource app that is not currently provided - __[fill out the plugin request form](https://goo.gl/forms/WZ5wBwMDiNUF5i552)__. The Dropsource team will either add it to the board or follow up with you to pin down any required details. We'll keep the status of each request updated in the Trello board. 
 
@@ -54,7 +54,7 @@ ___Please note:___
 
 ## Resources
 
-Check out out shareable open source resources for use in your apps, including APIs, specifications, and more. Download and remix, create issues to discuss problems or enhancements, and contribute your own edits - pull requests welcome!
+Check out out shareable open source resources for use in your apps, including APIs, specifications, and more. Download and remix, create issues to discuss problems or enhancements, and contribute your own edits - pull requests welcome! :octocat:
 
 ### Community Learning Projects
 
