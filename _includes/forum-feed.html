@@ -14,7 +14,7 @@ fetch('https://forum.dropsource.com/posts.json', {headers:{'Content-Type':'appli
     var forumOutput='';
     var i;
     for(i=0; i<forumJson.latest_posts.length && i<10; i++){
-    	forumOutput+='<tr><td>';
+    	forumOutput+='<tr><td class="forum-img">';
     	var avatar=forumJson.latest_posts[i].avatar_template.replace('{size}', '240');
     	forumOutput+='<img class="forum-avatar" src="https://forum.dropsource.com'+avatar+'" width="60px" /></td><td><p class="forum-topic"><strong><a href="https://forum.dropsource.com/'+forumJson.latest_posts[i].topic_slug+'/'+forumJson.latest_posts[i].id+'/'+forumJson.latest_posts[i].post_number+'">'+forumJson.latest_posts[i].topic_title+'</a></strong></p>';
     	forumOutput+='<a href="https://forum.dropsource.com/u/'+forumJson.latest_posts[i].username+'">@'+forumJson.latest_posts[i].username+'</a>: ';
