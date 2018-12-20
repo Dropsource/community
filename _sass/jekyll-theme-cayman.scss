@@ -350,4 +350,19 @@ a {
 
 /* dropsource */
 
-p.forum-topic a { font-size:medium; color:black; }
+div.trello-card { margin-right:10px; float:left; }
+div.medium-post {
+	max-width:270px; float:left; font-size:small; padding:10px; border-right:1px solid #cccccc; min-height: 320px; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc;
+}
+#mediumPosts {
+	border-left: 1px solid #cccccc; 
+}
+.medium-post .img-container {
+	height:175px;
+}
+#trello:after, #mediumPosts:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+blockquote { font-size:medium; }

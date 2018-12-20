@@ -1,0 +1,19 @@
+<div id="trello">
+<p><strong>Feature requests recently updated:</strong></p>
+<script type="text/javascript">
+fetch('https://ds-community.herokuapp.com/trello').then(function(response) { 
+    return response.json();
+  }).then(function(trelloJson) {
+    var trelloOutput='';
+    var i;
+    for(i=0; i<trelloJson.length && i<6; i++){
+    	var currCard=trelloJson[i].card;
+    	trelloOutput+="<div class='trello-card'><blockquote class='trello-card'><a href='https://trello.com/c/"+currCard+"'>Trello Card</a></blockquote></div>";
+    }
+    $('#trello').append(trelloOutput);
+    var trelloEmbed='<script src=\'https://p.trellocdn.com/embed.min.js\'>\<\/script>';
+    $('#trello').append(trelloEmbed);
+});
+</script>
+
+</div>
