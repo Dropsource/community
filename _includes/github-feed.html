@@ -7,12 +7,15 @@ fetch('https://api.github.com/orgs/dropsource/events', {headers:{
     return response.json();
   })
   .then(function(ghJson) {
-    var ghOutput='<table><tbody style="width:70%; display:table;"><tr style="background-image: linear-gradient(#ffffff, #f0f0f0);"><td style="text-align:center; width:70px; height:70px; padding:10px;"><img src="https://avatars1.githubusercontent.com/u/14957781" width="50px"/></td><td style="font-size:large; vertical-align:center;"><div style="width:80%; float:left;"><p><strong><a style="color:black;" href="https://github.com/dropsource">Dropsource on GitHub</a></strong></p></div><div style="width:20%; float:left; text-align:right; padding:15px;"><img src="assets/svg/mark-github.svg" style="width:40px"/></div></td></tr>';
+    var ghOutput='<table class="gh-table"><tbody><tr class="gh-head"><td class="ghuser-cell"><img src="https://avatars1.githubusercontent.com/u/14957781" width="50px"/></td><td class="gh-title"><div class="gh-ds"><p><strong><a href="https://github.com/dropsource">Dropsource on GitHub</a></strong></p></div><div class="octo-cell"><img src="assets/svg/mark-github.svg" style="width:40px"/></div></td></tr>';
     var i;
     for(i=0; i<ghJson.length && i<10; i++){ //restrict length or scroll
     	var actor = ghJson[i].actor.url.substring(ghJson[i].actor.url.lastIndexOf('/')+1);
 		var ghInfo=getOcti(ghJson[i].type, ghJson[i].payload.ref_type);
-    	ghOutput+='<tr><td style="text-align:center; width:60px; height:60px; padding:15px;"><a href="https://github.com'+ghJson[i].actor.url.substring(ghJson[i].actor.url.lastIndexOf('/'))+'"><img src="'+ghJson[i].actor.avatar_url+'" width="40px" style="border-radius:20px;"/><a/></td><td><p><img src="assets/svg/'+ghInfo.img+'.svg" style="height:1.5em; margin-bottom:-0.5em;"/> '+new Date(ghJson[i].created_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })+' <strong><a href="https://github.com/'+actor+'" style="color:black;">@'+actor+'<a/></strong>'+ghInfo.message+'</p><p><strong><a href="https://github.com/'+ghJson[i].repo.name+'">'+ghJson[i].repo.name+'</a></strong>';
+    	ghOutput+='<tr><td class="repo-content">';
+    	ghOutput+='<a href="https://github.com'+ghJson[i].actor.url.substring(ghJson[i].actor.url.lastIndexOf('/'))+'"><img class="gh-avatar" src="'+ghJson[i].actor.avatar_url+'" width="40px"/><a/></td>';
+    	ghOutput+='<td><p><img class="gh-svg" src="assets/svg/'+ghInfo.img+'.svg"/> '+new Date(ghJson[i].created_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })+' <strong><a class="actor-link" href="https://github.com/'+actor+'">@'+actor+'<a/></strong>'+ghInfo.message+'</p>';
+    	ghOutput+='<p><strong><a href="https://github.com/'+ghJson[i].repo.name+'">'+ghJson[i].repo.name+'</a></strong>';
     	ghOutput+='</p></td></tr>';
     }
     ghOutput+='</tbody></table>';

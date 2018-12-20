@@ -349,9 +349,59 @@ a {
 }
 
 /* dropsource */
-
+table.gh-table tbody {
+ width:70%; display:table;
+}
+tr.gh-head {
+	background-image: linear-gradient(#ffffff, #f0f0f0);
+}
+td.ghuser-cell {
+	 text-align:center; 
+	 width:70px; 
+	 height:70px; 
+	 padding:10px;
+}
+td.gh-title {
+	 font-size:large; 
+	 vertical-align:center;
+}
+div.gh-ds {
+	width:80%; 
+	float:left;
+	color:black;
+}
+div.octo-cell {
+	width:20%; 
+	float:left; 
+	text-align:right; 
+	padding:15px;
+}
+td.repo-content {
+	 text-align:center; 
+	 width:60px; 
+	 height:60px; 
+	 padding:15px;
+}
+img.gh-avatar {
+	border-radius:20px;
+}
+img.gh-svg {
+	height:1.5em; 
+	margin-bottom:-0.5em;
+}
+a.actor-link {
+	color:black;
+}
+img.forum-avatar {
+	border-radius:30px;
+}
+#forum-feed td.forum-head {
+	 font-size:medium; 
+	 padding-bottom:10px;
+	 padding-top:10px;
+}
 div.trello-card { margin-right:10px; float:left; }
-div.medium-post {
+div.medium-post, div.repo {
 	max-width:270px; 
 	float:left; 
 	font-size:small; 
@@ -361,13 +411,13 @@ div.medium-post {
 	border-top: 1px solid #cccccc; 
 	border-bottom: 1px solid #cccccc;
 }
-#mediumPosts {
+#mediumPosts, #repos {
 	border-left: 1px solid #cccccc; 
 }
 .medium-post .img-container {
 	height:175px;
 }
-#trello:after, #mediumPosts:after {
+#trello:after, #mediumPosts:after, #repos:after {
   content: "";
   display: table;
   clear: both;
