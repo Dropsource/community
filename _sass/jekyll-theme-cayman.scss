@@ -352,7 +352,14 @@ a {
 
 div.trello-card { margin-right:10px; float:left; }
 div.medium-post {
-	max-width:270px; float:left; font-size:small; padding:10px; border-right:1px solid #cccccc; min-height: 320px; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc;
+	max-width:270px; 
+	float:left; 
+	font-size:small; 
+	padding:10px; 
+	border-right:1px solid #cccccc; 
+	min-height: 320px; 
+	border-top: 1px solid #cccccc; 
+	border-bottom: 1px solid #cccccc;
 }
 #mediumPosts {
 	border-left: 1px solid #cccccc; 
@@ -366,3 +373,4 @@ div.medium-post {
   clear: both;
 }
 blockquote { font-size:medium; }
+#forum-feed td { padding-top:0; }
