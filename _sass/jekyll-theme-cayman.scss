@@ -394,6 +394,8 @@ a.actor-link {
 }
 img.forum-avatar {
 	border-radius:30px;
+	margin-top:20px;
+	margin-bottom:10px;
 }
 #forum-feed td.forum-head {
 	 font-size:medium; 
@@ -423,4 +425,4 @@ div.medium-post, div.repo {
   clear: both;
 }
 blockquote { font-size:medium; }
-#forum-feed td { padding-top:0; min-height:120px; }
+#forum-feed td { padding-top:0; }
