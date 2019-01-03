@@ -69,3 +69,5 @@ Download, create issues, fork, and create pull requests on the Dropsource open s
 Check out what's happening with Dropsource projects on GitHub.
 
 {% include github-feed.html %}
+
+[Back to top :arrow_up:](#dropsource-community-hub){:.top}
