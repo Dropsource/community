@@ -28,7 +28,7 @@ Access community support, connect to other Dropsource developers, and get involv
 
 Have an impact on the future of the Dropsource platform! Make a feature request or register to have your say on feature developments as they happen. Help the core Dropsource team to understand your goals and feed your input into feature prioritization. :rocket:
 
-### Sneek Peaks
+### Sneak Peeks
 
 Register for sneak peeks of upcoming features and provide feedback that will be built into product decisions. The team will follow up to arrange sessions to show you some of what we're working on and find out what you think.
 
