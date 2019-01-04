@@ -1,0 +1,17 @@
+<script src="../assets/js/anchor.min.js"></script>
+<script type="text/javascript">
+anchors.options = {
+	placement: 'left'
+};
+anchors.add('h2, h3');
+$(document).ready(function () { 
+	$('.note').click(function(){ 
+		jQuery('.note-info').each(function(i, n) {
+			if($(this).is(":visible"))
+				$(this).slideUp(300);
+			else
+				$(this).slideDown(300);
+		});
+	});
+});
+</script>
