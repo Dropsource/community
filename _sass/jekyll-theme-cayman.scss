@@ -392,8 +392,9 @@ img.gh-svg {
 a.actor-link {
 	color:black;
 }
-td.forum-img {
-	width:80px;
+table td.forum-img {
+	min-width:80px;
+	padding:10px;
 }
 img.forum-avatar {
 	border-radius:30px;
