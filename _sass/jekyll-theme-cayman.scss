@@ -94,15 +94,15 @@ a {
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
-    padding: 5rem 6rem;
+    padding: 3rem 6rem;
   }
 
   @include medium {
-    padding: 3rem 4rem;
+    padding: 2rem 4rem;
   }
 
   @include small {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 
@@ -447,10 +447,50 @@ a.top {
 	background: #f9f9f9;
 	border-radius: 5px;
 }
-.note:hover {
+.note:hover, .question:hover {
  cursor: pointer; cursor: hand;
 }
-
+.answer { 
+	display:none; 
+}
+.question {
+	border: 1px #cccccc solid;
+	padding:2px 10px;
+	background: #f9f9f9;
+	border-radius: 5px;
+}
+.note:after, .question:after {
+	content:"+";
+	float:right;
+}
+.emoji {
+	margin-bottom:-3px;
+}
+img.editor-elements { 
+	width:250px; 
+	border:1px solid #cccccc; 
+	vertical-align:top; 
+}
+img.editor-actions { 
+	width:550px; 
+	border:1px solid #cccccc; 
+}
+img.editor-actions ~ em { 
+	font-size:small; 
+	display:block; 
+	width:100%; 
+	text-align:right; 
+}
+.page-header .btn {
+	background:url('../svg/mark-github-white.svg') no-repeat 90%;
+	padding-right:50px;
+	background-size:30px;
+}
+h1.project-name {
+	background:url('../img/ds-test-logo.png') no-repeat top;
+	padding-top:100px;
+	background-size:100px;
+}
 /* anchor js styling */
 .anchorjs-link {
   color: inherit !important;

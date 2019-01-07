@@ -13,5 +13,13 @@ $(document).ready(function () {
 				$(this).slideDown(300);
 		});
 	});
+	$('.question').click(function(){ 
+		jQuery('.answer').each(function(i, n) {
+			if($(this).is(":visible"))
+				$(this).slideUp(300);
+			else
+				$(this).slideDown(300);
+		});
+	});
 });
 </script>
